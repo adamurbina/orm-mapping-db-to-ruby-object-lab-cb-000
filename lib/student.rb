@@ -16,7 +16,7 @@ class Student
     sql = <<-SQL
         SELECT * FROM students
     SQL
-    
+
     DB[:conn].execute(sql).map do |row|
         self.new_from_db(row)
     end
@@ -68,7 +68,7 @@ class Student
       self.first_X_students_in_grade_10(1).first
   end
 
-  def .all_students_in_grade_X(grade)
+  def self.all_students_in_grade_X(grade)
       sql = <<-SQL
         SELECT * FROM students
         WHERE students.grade = ?
