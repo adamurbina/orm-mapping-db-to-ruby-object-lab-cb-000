@@ -56,7 +56,7 @@ class Student
         WHERE students.grade = 10
       SQL
       DB[:conn].execute(sql).map { |row|
-            self.new_from_db(row)}[0..number]
+            self.new_from_db(row)}[0..(number -1)]
   end
 
   def save
